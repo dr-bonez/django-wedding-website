@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <style type="text/css">
+        @font-face {
+            font-family: 'Chelsea';
+            src: url('{% static "bigday/fonts/Chelsea.ttf" %}') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Lightfoot';
+            src: url('{% static "bigday/fonts/Lightfoot.ttf" %}') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
         #outlook a { padding: 0; }
         .ReadMsgBody { width: 100%; }
         .ExternalClass { width: 100%; }
@@ -37,15 +49,31 @@
             border-collapse: collapse !important;
         }
         @media screen and (max-width: 525px) {
-            td.floral-cell {
-                display: none !important;
-            }
             table.responsive-table {
                 width: 100% !important;
             }
             td.text-cell {
-                padding: 30px 20px !important;
+                padding: 30px 10px 30px 200px !important;
                 text-align: center !important;
+                background-size: auto 100% !important;
+            }
+            td.text-cell p {
+                font-size: 14px !important;
+            }
+            td.text-cell .save-date-large {
+                font-size: 28px !important;
+            }
+            td.text-cell .save-date-small {
+                font-size: 14px !important;
+            }
+            td.text-cell .names {
+                font-size: 18px !important;
+            }
+            td.text-cell .date {
+                font-size: 18px !important;
+            }
+            td.text-cell .location {
+                font-size: 16px !important;
             }
         }
     </style>
@@ -72,20 +100,12 @@
                    style="background-color: #EDEADF;">
                 <tbody>
                 <tr>
-                    <!-- FLORAL IMAGE COLUMN -->
-                    <td class="floral-cell" align="left" valign="bottom" width="200" style="padding: 20px 0 0 10px; vertical-align: bottom;">
-                        {% with "save-the-date/images/SaveTheDateBackground.png" as bg_path %}
-                        <img src="{% if email_mode %}cid:SaveTheDateBackground.png{% else %}{% static bg_path %}{% endif %}"
-                             alt=""
-                             style="display: block;"
-                             border="0"
-                             width="190">
-                        {% endwith %}
-                    </td>
-
-                    <!-- TEXT CONTENT COLUMN -->
+                    {% with "save-the-date/images/SaveTheDateBackground.png" as bg_path %}
+                    <!-- TEXT CONTENT with floral background -->
                     <td class="text-cell" align="center" valign="middle"
-                        style="padding: 40px 30px 40px 10px; text-align: center;">
+                        background="{% if email_mode %}cid:SaveTheDateBackground.png{% else %}{% static bg_path %}{% endif %}"
+                        style="padding: 40px 30px 40px 200px; text-align: center; background-image: url('{% if email_mode %}cid:SaveTheDateBackground.png{% else %}{% static bg_path %}{% endif %}'); background-repeat: no-repeat; background-position: left center; background-size: auto 100%;">
+                    {% endwith %}
 
                         <!-- you are cordially invited to -->
                         <p style="margin: 0 0 2px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 18px; color: #717450; font-weight: normal;">
@@ -93,8 +113,8 @@
                         </p>
 
                         <!-- SAVE THE DATE -->
-                        <p style="margin: 0 0 20px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; color: #7B4369; font-weight: normal; line-height: 1.1;">
-                            <span style="font-size: 42px; text-transform: uppercase; letter-spacing: 2px;">Save </span><span style="font-size: 22px; text-transform: uppercase;">the </span><span style="font-size: 42px; text-transform: uppercase; letter-spacing: 2px;">Date</span>
+                        <p style="margin: 0 0 20px 0; font-family: Lightfoot, Georgia, 'Times New Roman', serif; color: #7B4369; font-weight: normal; line-height: 1.1;">
+                            <span class="save-date-large" style="font-size: 42px; letter-spacing: 2px; vertical-align: middle;">Save</span><span class="save-date-small" style="font-size: 22px; vertical-align: middle;"> the </span><span class="save-date-large" style="font-size: 42px; letter-spacing: 2px; vertical-align: middle;">Date</span>
                         </p>
 
                         <!-- the wedding of -->
@@ -103,7 +123,7 @@
                         </p>
 
                         <!-- RONAN JO DANDELION JONES -->
-                        <p style="margin: 0 0 2px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 28px; color: #7B4369; font-weight: normal; text-transform: uppercase; letter-spacing: 1px; line-height: 1.2;">
+                        <p class="names" style="margin: 0 0 2px 0; font-family: Lightfoot, Georgia, 'Times New Roman', serif; font-size: 28px; color: #7B4369; font-weight: normal; letter-spacing: 1px; line-height: 1.2;">
                             Ronan Jo<br>Dandelion Jones
                         </p>
 
@@ -113,7 +133,7 @@
                         </p>
 
                         <!-- AIDEN KRISTOPHER MCCLELLAND -->
-                        <p style="margin: 0 0 20px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 28px; color: #7B4369; font-weight: normal; text-transform: uppercase; letter-spacing: 1px; line-height: 1.2;">
+                        <p class="names" style="margin: 0 0 20px 0; font-family: Lightfoot, Georgia, 'Times New Roman', serif; font-size: 28px; color: #7B4369; font-weight: normal; letter-spacing: 1px; line-height: 1.2;">
                             Aiden Kristopher<br>McClelland
                         </p>
 
@@ -123,12 +143,12 @@
                         </p>
 
                         <!-- September 6th, 2026 -->
-                        <p style="margin: 0 0 2px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 26px; color: #7B4369; font-weight: bold;">
+                        <p class="date" style="margin: 0 0 2px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 26px; color: #7B4369; font-weight: bold;">
                             September 6th, 2026
                         </p>
 
                         <!-- in Golden, Colorado -->
-                        <p style="margin: 0 0 10px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 22px; color: #717450; font-weight: bold;">
+                        <p class="location" style="margin: 0 0 10px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 22px; color: #7B4369; font-weight: bold;">
                             in Golden, Colorado
                         </p>
 
@@ -148,7 +168,7 @@
                 <tr>
                     <td align="center"
                         style="font-size: 13px; line-height: 20px; font-family: Chelsea, Georgia, 'Times New Roman', serif; color: #999999; padding: 20px 20px 30px 20px;">
-                        <a href="{{ site_url }}" style="color: #7B4369; text-decoration: none;"
+                        <a href="{{ site_url }}" style="color: #7B4369; text-decoration: none; font-size: 20px;"
                            {% if email_mode %}target="_blank"{% endif %}>
                             Visit Our Wedding Website
                         </a>

@@ -13,6 +13,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Lightfoot';
+    src: url('../fonts/Lightfoot.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html,
 body {
     width: 100%;
@@ -53,7 +60,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Chelsea','Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-family: 'Lightfoot','Open Sans','Helvetica Neue',Arial,sans-serif;
 }
 
 p {
