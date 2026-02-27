@@ -1,41 +1,169 @@
-{% extends 'guests/email_templates/email_base.html' %}
 {% load static %}
-{% block main_image %}
-    <a href="{{ site_url }}"
-       {% if email_mode %}target="_blank"{% endif %}>
-    {% with "save-the-date/images/"|add:main_image as main_static_url %}
-        <img src="{% if email_mode %}cid:{{ main_image }}{% else %}{% static main_static_url %}{% endif %}"
-             alt="{{ couple }}"
-             style="display: block; padding: 0; color: #666666; text-decoration: none; font-family: Helvetica, arial, sans-serif; font-size: 16px;"
-             class="img-max" border="0"
-             height="400" width="500">
-    {% endwith %}
-    </a>
-{% endblock %}
-{% block main_copy %}
-    <table border="0" width="100%" cellpadding="0" cellspacing="0">
-        <tbody>
-        <tr>
-            <td style="font-size: 35px; font-family: Palatino, serif; color: {{ font_color }}; padding-top: 30px; font-weight:bolder;"
-                class="padding-copy"
-                align="center">
-                {{ date }}
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 20px 0 0 0; font-size: 16px; line-height: 20px; font-family: Helvetica, Arial, sans-serif; color: {{ font_color }};"
-                class="padding-copy"
-                align="center">
-                {{ couple }}<br>
-                {{ location }}<br>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-{% endblock %}
-{% block footer_content %}
-    Can't make it? Let us know at <a class="moz-txt-link-abbreviated" href="mailto:{{ rsvp_address }}">{{ rsvp_address }}</a>.
-    {% if email_mode %}
-        <p><a href="{{ site_url }}">{{ site_url }}</a></p>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style type="text/css">
+        #outlook a { padding: 0; }
+        .ReadMsgBody { width: 100%; }
+        .ExternalClass { width: 100%; }
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+            line-height: 100%;
+        }
+        body, table, td, a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+        body {
+            height: 100% !important;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+        }
+        table {
+            border-collapse: collapse !important;
+        }
+        @media screen and (max-width: 525px) {
+            td.floral-cell {
+                display: none !important;
+            }
+            table.responsive-table {
+                width: 100% !important;
+            }
+            td.text-cell {
+                padding: 30px 20px !important;
+                text-align: center !important;
+            }
+        }
+    </style>
+    {% if not email_mode %}
+        {% include "partials/google-analytics.html" %}
     {% endif %}
-{% endblock %}
+</head>
+<body bgcolor="#F5F0E8" style="margin: 0; padding: 0; background-color: #F5F0E8;">
+<title>{{ page_title }}</title>
+
+<!-- PREHEADER TEXT -->
+<div style="display: none; font-size: 1px; color: #F5F0E8; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+    {{ preheader_text }}
+</div>
+
+<!-- OUTER WRAPPER -->
+<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#F5F0E8" style="background-color: #F5F0E8;">
+    <tbody>
+    <tr>
+        <td align="center" style="padding: 30px 10px;">
+
+            <!-- MAIN CARD -->
+            <table class="responsive-table" align="center" border="0" width="600" cellpadding="0" cellspacing="0"
+                   style="background-color: #EDEADF;">
+                <tbody>
+                <tr>
+                    <!-- FLORAL IMAGE COLUMN -->
+                    <td class="floral-cell" align="left" valign="bottom" width="200" style="padding: 20px 0 0 10px; vertical-align: bottom;">
+                        {% with "save-the-date/images/SaveTheDateBackground.png" as bg_path %}
+                        <img src="{% if email_mode %}cid:SaveTheDateBackground.png{% else %}{% static bg_path %}{% endif %}"
+                             alt=""
+                             style="display: block;"
+                             border="0"
+                             width="190">
+                        {% endwith %}
+                    </td>
+
+                    <!-- TEXT CONTENT COLUMN -->
+                    <td class="text-cell" align="center" valign="middle"
+                        style="padding: 40px 30px 40px 10px; text-align: center;">
+
+                        <!-- you are cordially invited to -->
+                        <p style="margin: 0 0 2px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 18px; color: #717450; font-weight: normal;">
+                            you are cordially invited to
+                        </p>
+
+                        <!-- SAVE THE DATE -->
+                        <p style="margin: 0 0 20px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; color: #7B4369; font-weight: normal; line-height: 1.1;">
+                            <span style="font-size: 42px; text-transform: uppercase; letter-spacing: 2px;">Save </span><span style="font-size: 22px; text-transform: uppercase;">the </span><span style="font-size: 42px; text-transform: uppercase; letter-spacing: 2px;">Date</span>
+                        </p>
+
+                        <!-- the wedding of -->
+                        <p style="margin: 0 0 5px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 18px; color: #717450; font-weight: normal;">
+                            the wedding of
+                        </p>
+
+                        <!-- RONAN JO DANDELION JONES -->
+                        <p style="margin: 0 0 2px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 28px; color: #7B4369; font-weight: normal; text-transform: uppercase; letter-spacing: 1px; line-height: 1.2;">
+                            Ronan Jo<br>Dandelion Jones
+                        </p>
+
+                        <!-- and -->
+                        <p style="margin: 2px 0 5px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 18px; color: #717450; font-weight: normal;">
+                            and
+                        </p>
+
+                        <!-- AIDEN KRISTOPHER MCCLELLAND -->
+                        <p style="margin: 0 0 20px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 28px; color: #7B4369; font-weight: normal; text-transform: uppercase; letter-spacing: 1px; line-height: 1.2;">
+                            Aiden Kristopher<br>McClelland
+                        </p>
+
+                        <!-- will take place on -->
+                        <p style="margin: 0 0 2px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 18px; color: #717450; font-weight: normal;">
+                            will take place on
+                        </p>
+
+                        <!-- September 6th, 2026 -->
+                        <p style="margin: 0 0 2px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 26px; color: #7B4369; font-weight: bold;">
+                            September 6th, 2026
+                        </p>
+
+                        <!-- in Golden, Colorado -->
+                        <p style="margin: 0 0 10px 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 22px; color: #717450; font-weight: bold;">
+                            in Golden, Colorado
+                        </p>
+
+                        <!-- formal invitation to follow -->
+                        <p style="margin: 0; font-family: Chelsea, Georgia, 'Times New Roman', serif; font-size: 16px; color: #717450; font-weight: normal;">
+                            formal invitation to follow
+                        </p>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- FOOTER -->
+            <table class="responsive-table" align="center" border="0" width="600" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td align="center"
+                        style="font-size: 13px; line-height: 20px; font-family: Chelsea, Georgia, 'Times New Roman', serif; color: #999999; padding: 20px 20px 30px 20px;">
+                        <a href="{{ site_url }}" style="color: #7B4369; text-decoration: none;"
+                           {% if email_mode %}target="_blank"{% endif %}>
+                            Visit Our Wedding Website
+                        </a>
+                        <br>
+                        Can't make it? Let us know at
+                        <a href="mailto:{{ rsvp_address }}" style="color: #7B4369; text-decoration: none;">{{ rsvp_address }}</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

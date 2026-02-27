@@ -2,7 +2,16 @@
  * Modified from Start Bootstrap - Creative Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ *
+ * Color palette: Purple (#3a0e44), Green (#86B586), Cream (#FFF8E7)
  */
+
+@font-face {
+    font-family: 'Chelsea';
+    src: url('../fonts/Chelsea.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 html,
 body {
@@ -12,21 +21,22 @@ body {
 }
 
 body {
-    font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+    font-family: 'Chelsea','Helvetica Neue',Arial,sans-serif;
+    background-color: #FFF8E7;
 }
 
 hr {
     max-width: 50px;
-    border-color: #f05f40;
+    border-color: #3a0e44;
     border-width: 3px;
 }
 
 hr.light {
-    border-color: #fff;
+    border-color: #92a892;
 }
 
 a {
-    color: #f05f40;
+    color: #92a892;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -34,7 +44,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #eb3812;
+    color: #1A0226;
 }
 
 h1,
@@ -43,7 +53,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-family: 'Chelsea','Open Sans','Helvetica Neue',Arial,sans-serif;
 }
 
 p {
@@ -54,7 +64,11 @@ p {
 
 
 .bg-primary {
-    background-color: #f05f40;
+    background-color: #3a0e44;
+}
+
+.bg-info {
+    background-color: #86B586;
 }
 
 .bg-primary a {
@@ -64,7 +78,7 @@ p {
 
 .bg-dark {
     color: #fff;
-    background-color: #222;
+    background-color: #3a0e44;
 }
 
 .text-faded {
@@ -84,9 +98,9 @@ aside {
 }
 
 .navbar-default {
-    border-color: rgba(34,34,34,.05);
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-    background-color: #fff;
+    border-color: rgba(42,42,42,.05);
+    font-family: 'Chelsea','Open Sans','Helvetica Neue',Arial,sans-serif;
+    background-color: #FFF8E7;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -94,14 +108,14 @@ aside {
 
 .navbar-default .navbar-header .navbar-brand {
     text-transform: uppercase;
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-family: 'Chelsea','Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
-    color: #f05f40;
+    color: #3a0e44;
 }
 
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
-    color: #eb3812;
+    color: #1A0226;
 }
 
 .navbar-default .nav > li>a,
@@ -109,17 +123,17 @@ aside {
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 700;
-    color: rgb(28,56,81);
+    color: #86B586;
 }
 
 .navbar-default .nav > li>a:hover,
 .navbar-default .nav>li>a:focus:hover {
-    color: #f05f40;
+    color: #3a0e44;
 }
 
 .navbar-default .nav > li.active>a,
 .navbar-default .nav>li.active>a:focus {
-    color: #f05f40!important;
+    color: #3a0e44!important;
     background-color: transparent;
 }
 
@@ -130,52 +144,52 @@ aside {
 
 @media(min-width:768px) {
     .navbar-default {
-        border-color: rgba(28,56,81,.3);
-        background-color: transparent;
+        border-color: rgba(42,42,42,.05);
+        background-color: #FFF8E7;
     }
 
     .navbar-default .navbar-header .navbar-brand {
-        color: rgba(28,56,81,.7);
+        color: #3a0e44;
     }
 
     .navbar-default .navbar-header .navbar-brand:hover,
     .navbar-default .navbar-header .navbar-brand:focus {
-        color: #fff;
+        color: #1A0226;
     }
 
     .navbar-default .nav > li>a,
     .navbar-default .nav>li>a:focus {
-        color: rgba(28,56,81,.7);
+        color: #86B586;
     }
 
     .navbar-default .nav > li>a:hover,
     .navbar-default .nav>li>a:focus:hover {
-        color: rgb(28,56,81);
+        color: #3a0e44;
     }
 
     .navbar-default.affix {
-        border-color: rgba(34,34,34,.05);
-        background-color: #fff;
+        border-color: rgba(42,42,42,.05);
+        background-color: #FFF8E7;
     }
 
     .navbar-default.affix .navbar-header .navbar-brand {
         font-size: 14px;
-        color: #f05f40;
+        color: #3a0e44;
     }
 
     .navbar-default.affix .navbar-header .navbar-brand:hover,
     .navbar-default.affix .navbar-header .navbar-brand:focus {
-        color: #eb3812;
+        color: #1A0226;
     }
 
     .navbar-default.affix .nav > li>a,
     .navbar-default.affix .nav>li>a:focus {
-        color: rgb(28,56,81);
+        color: #86B586;
     }
 
     .navbar-default.affix .nav > li>a:hover,
     .navbar-default.affix .nav>li>a:focus:hover {
-        color: #f05f40;
+        color: #3a0e44;
     }
 }
 
@@ -184,7 +198,7 @@ header {
     width: 100%;
     min-height: auto;
     text-align: center;
-    color: rgb(28,56,81);
+    color: #86B586;
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -192,12 +206,58 @@ header {
     -o-background-size: cover;
 }
 
+/* Slideshow: crossfade between adventure photos */
 #main-header {
-    background-image: url('../images/wedding-selfie-better.jpg');
+    background-color: #3a0e44;
+    overflow: hidden;
+}
+
+#main-header .slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#main-header .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: slideFade 78s infinite;
+}
+
+/* 13 slides, 6s each visible (2s fade in, 2s hold, 2s fade out), total cycle = 78s */
+#main-header .slide:nth-child(1)  { animation-delay: 0s; }
+#main-header .slide:nth-child(2)  { animation-delay: 6s; }
+#main-header .slide:nth-child(3)  { animation-delay: 12s; }
+#main-header .slide:nth-child(4)  { animation-delay: 18s; }
+#main-header .slide:nth-child(5)  { animation-delay: 24s; }
+#main-header .slide:nth-child(6)  { animation-delay: 30s; }
+#main-header .slide:nth-child(7)  { animation-delay: 36s; }
+#main-header .slide:nth-child(8)  { animation-delay: 42s; }
+#main-header .slide:nth-child(9)  { animation-delay: 48s; }
+#main-header .slide:nth-child(10) { animation-delay: 54s; }
+#main-header .slide:nth-child(11) { animation-delay: 60s; }
+#main-header .slide:nth-child(12) { animation-delay: 66s; }
+#main-header .slide:nth-child(13) { animation-delay: 72s; }
+
+@keyframes slideFade {
+    0%      { opacity: 0; }
+    2.56%   { opacity: 1; }
+    7.69%   { opacity: 1; }
+    10.26%  { opacity: 0; }
+    100%    { opacity: 0; }
 }
 
 header .header-content {
     position: relative;
+    z-index: 1;
     width: 100%;
     padding: 100px 15px;
     text-align: center;
@@ -209,6 +269,7 @@ header .header-content .header-content-inner h1 {
     text-transform: uppercase;
     font-weight: 700;
     color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,.6);
 }
 
 header .header-content .header-content-inner hr {
@@ -223,7 +284,8 @@ header .header-content .header-content-inner p {
 }
 
 #second-header {
-    background-image: url('../images/chapmans-peak-view.jpg');
+    background-image: url('../images/lookout-mountain-view.jpg');
+    background-color: #3a0e44;
 }
 
 @media(min-width:768px) {
@@ -305,7 +367,7 @@ header .header-content .header-content-inner p {
     text-align: center;
     color: #fff;
     opacity: 0;
-    background: rgba(240,95,64,.9);
+    background: rgba(51,4,73,.9);
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -322,7 +384,7 @@ header .header-content .header-content-inner p {
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
     padding: 0 15px;
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-family: 'Chelsea','Open Sans','Helvetica Neue',Arial,sans-serif;
 }
 
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
@@ -354,7 +416,7 @@ header .header-content .header-content-inner p {
 }
 
 .text-primary {
-    color: #f05f40;
+    color: #3a0e44;
 }
 
 .no-gutter > [class*=col-] {
@@ -364,7 +426,7 @@ header .header-content .header-content-inner p {
 
 .btn-default {
     border-color: #fff;
-    color: #222;
+    color: #2A2A2A;
     background-color: #fff;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
@@ -378,7 +440,7 @@ header .header-content .header-content-inner p {
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
     border-color: #ededed;
-    color: #222;
+    color: #2A2A2A;
     background-color: #f2f2f2;
 }
 
@@ -412,13 +474,13 @@ fieldset[disabled] .btn-default.active {
 
 .btn-default .badge {
     color: #fff;
-    background-color: #222;
+    background-color: #2A2A2A;
 }
 
 .btn-primary {
-    border-color: #f05f40;
+    border-color: #3a0e44;
     color: #fff;
-    background-color: #f05f40;
+    background-color: #3a0e44;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -430,9 +492,9 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-    border-color: #ed431f;
+    border-color: #24033A;
     color: #fff;
-    background-color: #ee4b28;
+    background-color: #280640;
 }
 
 .btn-primary:active,
@@ -459,12 +521,12 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-    border-color: #f05f40;
-    background-color: #f05f40;
+    border-color: #3a0e44;
+    background-color: #3a0e44;
 }
 
 .btn-primary .badge {
-    color: #f05f40;
+    color: #3a0e44;
     background-color: #fff;
 }
 
@@ -472,7 +534,7 @@ fieldset[disabled] .btn-primary.active {
     border: 0;
     border-radius: 300px;
     text-transform: uppercase;
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-family: 'Chelsea','Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
 }
 
@@ -483,13 +545,13 @@ fieldset[disabled] .btn-primary.active {
 ::-moz-selection {
     text-shadow: none;
     color: #fff;
-    background: #222;
+    background: #3a0e44;
 }
 
 ::selection {
     text-shadow: none;
     color: #fff;
-    background: #222;
+    background: #3a0e44;
 }
 
 img::selection {
@@ -503,11 +565,11 @@ img::-moz-selection {
 }
 
 body {
-    webkit-tap-highlight-color: #222;
+    webkit-tap-highlight-color: #2A2A2A;
 
 }
 
 #footer {
-    background-color: #222;
+    background-color: #2A2A2A;
     padding-bottom: 30px;
 }

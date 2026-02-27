@@ -15,7 +15,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">{{ couple_name }}'s Big Day</a>
+                <a class="navbar-brand page-scroll" href="#page-top">{{ couple_name }}'s Wedding</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -24,13 +24,13 @@
                         <a class="page-scroll" href="#main-header">Home</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#event">Event</a>
+                        <a class="page-scroll" href="#save-the-date">Save the Date</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#niagara">Niagara-on-the-Lake</a>
+                        <a class="page-scroll" href="#story">Our Story</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#other-stuff">Everything Else</a>
+                        <a class="page-scroll" href="#proposal">The Proposal</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -43,41 +43,39 @@
     </nav>
     {% block main %}
     <header id="main-header">
+        <div class="slideshow">
+            <div class="slide" style="background-image: url('{% static 'bigday/images/adventures/IMG_20260208_180031_HDR.jpg' %}')"></div>
+            <div class="slide" style="background-image: url('{% static 'bigday/images/adventures/IMG_20250816_101437_HDR.jpg' %}')"></div>
+            <div class="slide" style="background-image: url('{% static 'bigday/images/adventures/20241031_200908.jpg' %}')"></div>
+            <div class="slide" style="background-image: url('{% static 'bigday/images/adventures/20230604_162336.jpg' %}')"></div>
+            <!-- <div class="slide" style="background-image: url('{% static 'bigday/images/adventures/20230325_141427.jpg' %}')"></div> -->
+            <div class="slide" style="background-image: url('{% static 'bigday/images/adventures/20240622_114937.jpg' %}')"></div>
+            <div class="slide" style="background-image: url('{% static 'bigday/images/adventures/20230710_194837.jpg' %}')"></div>
+            <div class="slide" style="background-image: url('{% static 'bigday/images/adventures/signal-2022-07-26-14-41-27-525-3.jpg' %}')"></div>
+            <div class="slide" style="background-image: url('{% static 'bigday/images/adventures/20220805_142442.jpg' %}')"></div>
+            <div class="slide" style="background-image: url('{% static 'bigday/images/adventures/20230108_131036.jpg' %}')"></div>
+            <div class="slide" style="background-image: url('{% static 'bigday/images/adventures/20240521_204451.jpg' %}')"></div>
+            <div class="slide" style="background-image: url('{% static 'bigday/images/adventures/20230326_165729.jpg' %}')"></div>
+            <div class="slide" style="background-image: url('{% static 'bigday/images/adventures/IMG_7389.JPG' %}')"></div>
+        </div>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>We did it!!</h1>
-                {% comment %}
-                <hr>
-                <h2>It's wedding week!</h2>
-                <a href="#welcome" class="btn btn-info btn-xl page-scroll">Welcome</a>
-                <a href="#event" class="btn btn-primary btn-xl page-scroll">Friday</a>
-                <a href="#saturday-event" class="btn btn-success btn-xl page-scroll">Saturday</a>
-                {% endcomment %}
+                <h1>The Quest Begins&hellip;</h1>
             </div>
         </div>
     </header>
-    <section class="bg-info" id="welcome">
+    <section class="bg-info" id="save-the-date">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Welcome!</h2>
+                    <h2 class="section-heading">Save the Date</h2>
                     <hr>
-                    <p>
-                        Hello friends and family! It's the week of the wedding!
-                    </p>
-                    <p>
-                        If you're looking for information about the event, look no further!
-                        Please see below for all the details regarding <a href="#event" class="page-scroll">Friday night's welcome party</a> and <a href="#saturday-event" class="page-scroll">Saturday's event</a>.
-                    </p>
-                    <p>
-                        To get added to the wedding whatsapp group first create an account and then send an
-                        email to <a href="mailto:{{ support_email }}">{{ support_email }}</a>.
-                        Also, the current front-runner for the wedding hashtag (if you're into that sort of thing) is #getlukky.
-                    </p>
-                    <p>
-                        Looking forward to seeing everyone soon!
-                    </p>
-                    <p class="pull-right">- Cory and Rowena</p>
+                    <dl class="dl-horizontal lead">
+                        <dt>Date</dt>
+                        <dd>{{ wedding_date }}</dd>
+                        <dt>Location</dt>
+                        <dd>{{ wedding_location }}</dd>
+                    </dl>
                 </div>
             </div>
         </div>
@@ -86,36 +84,36 @@
         <div class="container-fluid">
             <div class="row no-gutter">
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#event" class="portfolio-box page-scroll">
-                        <img src="{% static 'bigday/images/ravine-nav.jpg' %}" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-name">
-                                    The Event
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#niagara" class="portfolio-box page-scroll">
-                        <img src="{% static 'bigday/images/prince-of-wales-hotel-nav.jpg' %}" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-name">
-                                    Niagara-on-the-Lake
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
                     <a href="#story" class="portfolio-box page-scroll">
-                        <img src="{% static 'bigday/images/twelve-apostles-nav.jpg' %}" class="img-responsive" alt="">
+                        <img src="{% static 'bigday/images/adventures/20230108_131036.jpg' %}" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
-                                    Our Story
+                                    Where It All Began
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#proposal" class="portfolio-box page-scroll">
+                        <img src="{% static 'bigday/images/adventures/20230326_165729.jpg' %}" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-name">
+                                    The Proposal
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#more-to-follow" class="portfolio-box page-scroll">
+                        <img src="{% static 'bigday/images/adventures/signal-2022-07-26-14-41-27-525-3.jpg' %}" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-name">
+                                    More To Follow
                                 </div>
                             </div>
                         </div>
@@ -124,30 +122,19 @@
             </div>
         </div>
     </section>
-    {% include 'partials/event.html' %}
-    <section id="niagara">
-        {% include 'partials/niagara.html' %}
-    </section>
-{% comment %}
-        {% include 'partials/wedding-party.html' %}
-{% endcomment %}
-    <section id="other-stuff" class="bg-primary">
-        {% include 'partials/misc.html' %}
-    </section>
-    <section id="gifts">
-        {% include 'partials/gifts.html' %}
-    </section>
     <section id="story" class="bg-dark">
         {% include 'partials/story.html' %}
     </section>
     {% include 'partials/proposal.html' %}
-    {% include 'partials/save-the-dates.html' %}
+    <section id="more-to-follow" class="bg-primary">
+        {% include 'partials/more-to-follow.html' %}
+    </section>
     <section id="contact" class="bg-dark">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Contact us!</h2>
-                    <hr class="primary">
+                    <h2 class="section-heading">Contact Us!</h2>
+                    <hr class="light">
                     <p>If you have any questions don't hesitate to reach out!</p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
