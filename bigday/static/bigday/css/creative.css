@@ -273,7 +273,6 @@ header .header-content {
 header .header-content .header-content-inner h1 {
     margin-top: 0;
     margin-bottom: 0;
-    text-transform: uppercase;
     font-weight: 700;
     color: #fff;
     text-shadow: 0 2px 8px rgba(0,0,0,.6);
@@ -579,4 +578,34 @@ body {
 #footer {
     background-color: #2A2A2A;
     padding-bottom: 30px;
+}
+
+@media(max-width:525px) {
+    .save-the-date-card {
+        padding: 30px 10px 30px 200px !important;
+    }
+
+    .save-the-date-card p {
+        font-size: 14px !important;
+    }
+
+    .save-the-date-card .save-date-large {
+        font-size: 28px !important;
+    }
+
+    .save-the-date-card .save-date-small {
+        font-size: 14px !important;
+    }
+
+    .save-the-date-card .names {
+        font-size: 18px !important;
+    }
+
+    .save-the-date-card .date {
+        font-size: 18px !important;
+    }
+
+    .save-the-date-card .location {
+        font-size: 16px !important;
+    }
 }

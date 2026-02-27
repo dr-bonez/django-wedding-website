@@ -1,6 +1,7 @@
 from django.urls import re_path
 
-from guests.views import GuestListView, test_email, save_the_date_preview, save_the_date_random, export_guests, \
+from guests.views import GuestListView, test_email, save_the_date_preview, save_the_date_random, \
+    save_the_date_image, export_guests, \
     invitation, invitation_email_preview, invitation_email_test, rsvp_confirm, dashboard
 
 urlpatterns = [
@@ -12,6 +13,8 @@ urlpatterns = [
     re_path(r'^invite-email-test/(?P<invite_id>[\w-]+)/$', invitation_email_test, name='invitation-email-test'),
     re_path(r'^save-the-date/$', save_the_date_random, name='save-the-date-random'),
     re_path(r'^save-the-date/(?P<template_id>[\w-]+)/$', save_the_date_preview, name='save-the-date'),
+    re_path(r'^save-the-date-image/$', save_the_date_image, name='save-the-date-image-notrack'),
+    re_path(r'^save-the-date-image/(?P<invite_id>[\w-]+)/$', save_the_date_image, name='save-the-date-image'),
     re_path(r'^email-test/(?P<template_id>[\w-]+)/$', test_email, name='test-email'),
     re_path(r'^rsvp/confirm/(?P<invite_id>[\w-]+)/$', rsvp_confirm, name='rsvp-confirm'),
 ]

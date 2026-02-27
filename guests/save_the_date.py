@@ -1,7 +1,5 @@
 from __future__ import unicode_literals, print_function
 from copy import copy
-from email.mime.image import MIMEImage
-import os
 from datetime import datetime
 import random
 
@@ -31,6 +29,7 @@ def send_all_save_the_dates(test_only=False, mark_as_sent=False):
 
 def send_save_the_date_to_party(party, test_only=False):
     context = get_save_the_date_context(get_template_id_from_party(party))
+    context['invite_id'] = party.invitation_id
     recipients = party.guest_emails
     if not recipients:
         print('===== WARNING: no valid email addresses found for {} ====='.format(party))
@@ -75,13 +74,6 @@ def send_save_the_date_email(context, recipients, test_only=False):
     # https://www.vlent.nl/weblog/2014/01/15/sending-emails-with-embedded-images-in-django/
     msg = EmailMultiAlternatives(subject, template_text, settings.DEFAULT_WEDDING_FROM_EMAIL, recipients, reply_to=[settings.DEFAULT_WEDDING_REPLY_EMAIL])
     msg.attach_alternative(template_html, "text/html")
-    msg.mixed_subtype = 'related'
-    for filename in context.get('images', []):
-        attachment_path = os.path.join(os.path.dirname(__file__), 'static', 'save-the-date', 'images', filename)
-        with open(attachment_path, "rb") as image_file:
-            msg_img = MIMEImage(image_file.read())
-            msg_img.add_header('Content-ID', '<{}>'.format(filename))
-            msg.attach(msg_img)
 
     print('sending {} to {}'.format(context['name'], ', '.join(recipients)))
     if not test_only:

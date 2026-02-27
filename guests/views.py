@@ -1,5 +1,6 @@
 import base64
 from collections import namedtuple
+import os
 import random
 from datetime import datetime
 from django.conf import settings
@@ -136,6 +137,20 @@ def invitation_email_test(request, invite_id):
     party = guess_party_by_invite_id_or_404(invite_id)
     send_invitation_email(party, recipients=[settings.DEFAULT_WEDDING_TEST_EMAIL])
     return HttpResponse('sent!')
+
+
+def save_the_date_image(request, invite_id=None):
+    if invite_id:
+        try:
+            party = guess_party_by_invite_id_or_404(invite_id)
+            if party.save_the_date_opened is None:
+                party.save_the_date_opened = datetime.utcnow()
+                party.save()
+        except Exception:
+            pass
+    image_path = os.path.join(os.path.dirname(__file__), 'static', 'save-the-date', 'images', 'SaveTheDate.png')
+    with open(image_path, 'rb') as f:
+        return HttpResponse(f.read(), content_type='image/png')
 
 
 def save_the_date_random(request):

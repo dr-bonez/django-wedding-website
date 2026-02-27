@@ -64,23 +64,62 @@
             </div>
         </div>
     </header>
-    <section class="bg-info" id="save-the-date">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Save the Date</h2>
-                    <hr>
-                    <dl class="dl-horizontal lead">
-                        <dt>Date</dt>
-                        <dd>{{ wedding_date }}</dd>
-                        <dt>Location</dt>
-                        <dd>{{ wedding_location }}</dd>
-                    </dl>
-                </div>
-            </div>
+    <section id="save-the-date" style="padding: 0; background-color: #EDEADF;">
+        <div class="save-the-date-card" style="max-width: 600px; margin: 0 auto; background-color: #EDEADF; background-image: url('{% static 'bigday/images/SaveTheDateBackground.png' %}'); background-repeat: no-repeat; background-position: left center; background-size: auto 100%; padding: 40px 30px 40px 200px; text-align: center;">
+
+            <!-- you are cordially invited to -->
+            <p style="margin: 0 0 2px 0; font-size: 18px; color: #717450; font-weight: normal;">
+                you are cordially invited to
+            </p>
+
+            <!-- SAVE THE DATE -->
+            <p style="margin: 0 0 20px 0; font-family: 'Lightfoot', Georgia, 'Times New Roman', serif; color: #7B4369; font-weight: normal; line-height: 1.1;">
+                <span class="save-date-large" style="font-size: 42px; letter-spacing: 2px; vertical-align: middle;">Save</span><span class="save-date-small" style="font-size: 22px; vertical-align: middle;"> the </span><span class="save-date-large" style="font-size: 42px; letter-spacing: 2px; vertical-align: middle;">Date</span>
+            </p>
+
+            <!-- the wedding of -->
+            <p style="margin: 0 0 5px 0; font-size: 18px; color: #717450; font-weight: normal;">
+                the wedding of
+            </p>
+
+            <!-- RONAN JO DANDELION JONES -->
+            <p class="names" style="margin: 0 0 2px 0; font-family: 'Lightfoot', Georgia, 'Times New Roman', serif; font-size: 28px; color: #7B4369; font-weight: normal; letter-spacing: 1px; line-height: 1.2;">
+                Ronan Jo<br>Dandelion Jones
+            </p>
+
+            <!-- and -->
+            <p style="margin: 2px 0 5px 0; font-size: 18px; color: #717450; font-weight: normal;">
+                and
+            </p>
+
+            <!-- AIDEN KRISTOPHER MCCLELLAND -->
+            <p class="names" style="margin: 0 0 20px 0; font-family: 'Lightfoot', Georgia, 'Times New Roman', serif; font-size: 28px; color: #7B4369; font-weight: normal; letter-spacing: 1px; line-height: 1.2;">
+                Aiden Kristopher<br>McClelland
+            </p>
+
+            <!-- will take place on -->
+            <p style="margin: 0 0 2px 0; font-size: 18px; color: #717450; font-weight: normal;">
+                will take place on
+            </p>
+
+            <!-- September 6th, 2026 -->
+            <p class="date" style="margin: 0 0 2px 0; font-size: 26px; color: #7B4369; font-weight: bold;">
+                September 6th, 2026
+            </p>
+
+            <!-- in Golden, Colorado -->
+            <p class="location" style="margin: 0 0 10px 0; font-size: 22px; color: #7B4369; font-weight: bold;">
+                in Golden, Colorado
+            </p>
+
+            <!-- formal invitation to follow -->
+            <p style="margin: 0; font-size: 16px; color: #717450; font-weight: normal;">
+                formal invitation to follow
+            </p>
+
         </div>
     </section>
-    <section class="no-padding" id="navigation">
+    <section class="no-padding" id="navigation" style="display: none;">
         <div class="container-fluid">
             <div class="row no-gutter">
                 <div class="col-lg-4 col-sm-6">
