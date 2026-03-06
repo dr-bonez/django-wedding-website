@@ -73,6 +73,8 @@ def send_save_the_date_email(context, recipients, test_only=False):
     subject = 'Save the Date!'
     # https://www.vlent.nl/weblog/2014/01/15/sending-emails-with-embedded-images-in-django/
     msg = EmailMultiAlternatives(subject, template_text, settings.DEFAULT_WEDDING_FROM_EMAIL, recipients, reply_to=[settings.DEFAULT_WEDDING_REPLY_EMAIL])
+    msg.extra_headers['List-Unsubscribe'] = '<mailto:{}?subject=Unsubscribe>'.format(settings.DEFAULT_WEDDING_REPLY_EMAIL)
+    msg.extra_headers['List-Unsubscribe-Post'] = 'List-Unsubscribe=One-Click'
     msg.attach_alternative(template_html, "text/html")
 
     print('sending {} to {}'.format(context['name'], ', '.join(recipients)))

@@ -20,7 +20,7 @@
     // Highlight the top nav as scrolling occurs
     // (specifically turns the links orange)
     $('body').scrollspy({
-        target: '.navbar-fixed-top',
+        target: '#mainNav',
         offset: 51
     })
 

@@ -6,12 +6,13 @@ class GuestInline(admin.TabularInline):
     model = Guest
     fields = ('first_name', 'last_name', 'email', 'is_attending', 'meal', 'is_child')
     readonly_fields = ('first_name', 'last_name', 'email')
+    extra = 0
 
 
 class PartyAdmin(admin.ModelAdmin):
-    list_display = ('name', 'type', 'category', 'save_the_date_sent', 'invitation_sent', 'rehearsal_dinner', 'invitation_opened',
+    list_display = ('name', 'type', 'category', 'save_the_date_sent', 'save_the_date_opened', 'invitation_sent', 'rehearsal_dinner', 'invitation_opened',
                     'is_invited', 'is_attending')
-    list_filter = ('type', 'category', 'is_invited', 'is_attending', 'rehearsal_dinner', 'invitation_opened')
+    list_filter = ('type', 'category', 'is_invited', 'is_attending', 'rehearsal_dinner', 'save_the_date_opened', 'invitation_opened')
     inlines = [GuestInline]
 
 

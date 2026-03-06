@@ -108,9 +108,18 @@ aside {
     border-color: rgba(42,42,42,.05);
     font-family: 'Chelsea','Open Sans','Helvetica Neue',Arial,sans-serif;
     background-color: #FFF8E7;
+    margin-bottom: 0;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
+}
+
+.navbar-default.affix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
 }
 
 .navbar-default .navbar-header .navbar-brand {

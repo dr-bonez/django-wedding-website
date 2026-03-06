@@ -4,19 +4,23 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% if not email_mode %}
     <style type="text/css">
         @font-face {
             font-family: 'Chelsea';
-            src: url('{% if email_mode %}{{ site_url }}{% endif %}{% static "bigday/fonts/Chelsea.ttf" %}') format('truetype');
+            src: url('{% static "bigday/fonts/Chelsea.ttf" %}') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
         @font-face {
             font-family: 'Lightfoot';
-            src: url('{% if email_mode %}{{ site_url }}{% endif %}{% static "bigday/fonts/Lightfoot.ttf" %}') format('truetype');
+            src: url('{% static "bigday/fonts/Lightfoot.ttf" %}') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
+    </style>
+    {% endif %}
+    <style type="text/css">
         #outlook a { padding: 0; }
         .ReadMsgBody { width: 100%; }
         .ExternalClass { width: 100%; }
@@ -110,13 +114,42 @@
                 </tr>
                 </tbody>
             </table>
-            <!-- Accessible text for screen readers and email previews -->
-            <div style="max-height: 0; overflow: hidden; mso-hide: all; font-size: 0; line-height: 0;">
-                You are cordially invited to Save the Date for the wedding of
-                Ronan Jo Dandelion Jones and Aiden Kristopher McClelland.
-                The wedding will take place on September 6th, 2026 in Golden, Colorado.
-                Formal invitation to follow.
-            </div>
+            <!-- Event details as visible text (improves text-to-image ratio) -->
+            <table class="responsive-table" align="center" border="0" width="600" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td align="center" style="background-color: #EDEADF; padding: 20px 30px; font-family: Georgia, 'Times New Roman', serif; color: #717450; font-size: 16px; line-height: 24px;">
+                        <p style="margin: 0 0 8px 0; font-size: 18px; color: #7B4369; font-weight: bold;">
+                            Save the Date
+                        </p>
+                        <p style="margin: 0 0 4px 0;">
+                            The wedding of Ronan Jo Dandelion Jones &amp; Aiden Kristopher McClelland
+                        </p>
+                        <p style="margin: 0 0 4px 0; font-size: 18px; color: #7B4369; font-weight: bold;">
+                            September 6th, 2026
+                        </p>
+                        <p style="margin: 0 0 4px 0;">
+                            Golden, Colorado
+                        </p>
+                        <p style="margin: 0; font-size: 14px; font-style: italic;">
+                            Formal invitation to follow
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <!-- Resend note -->
+            <table class="responsive-table" align="center" border="0" width="600" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td align="center" style="background-color: #EDEADF; padding: 10px 30px 20px 30px; font-family: Georgia, 'Times New Roman', serif; color: #999999; font-size: 13px; line-height: 20px; border-top: 1px solid #D8D3C7;">
+                        You may have received this email before &mdash; we're resending it in case the
+                        original ended up in your spam folder due to a mail server misconfiguration on
+                        our end. Sorry for the extra message!
+                    </td>
+                </tr>
+                </tbody>
+            </table>
             {% else %}
             <!-- MAIN CARD (web: CSS background with live text) -->
             <table class="responsive-table" align="center" border="0" width="600" cellpadding="0" cellspacing="0"
@@ -197,6 +230,13 @@
                         <br>
                         Can't make it? Let us know at
                         <a href="mailto:{{ rsvp_address }}" style="color: #7B4369; text-decoration: none;">{{ rsvp_address }}</a>
+                        {% if email_mode %}
+                        <br><br>
+                        <span style="font-size: 11px; color: #bbbbbb;">
+                            Don't want to receive wedding updates?
+                            <a href="mailto:{{ rsvp_address }}?subject=Unsubscribe" style="color: #bbbbbb; text-decoration: underline;">Unsubscribe</a>
+                        </span>
+                        {% endif %}
                     </td>
                 </tr>
                 </tbody>

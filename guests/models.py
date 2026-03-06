@@ -7,9 +7,8 @@ from django.dispatch import receiver
 
 # these will determine the default formality of correspondence
 ALLOWED_TYPES = [
-    ('formal', 'formal'),
-    ('fun', 'fun'),
-    ('dimagi', 'dimagi'),
+    ('family', 'family'),
+    ('friends', 'friends'),
 ]
 
 
@@ -51,7 +50,11 @@ class Party(models.Model):
 
     @property
     def guest_emails(self):
-        return list(filter(None, self.guest_set.values_list('email', flat=True)))
+        emails = []
+        for email in self.guest_set.values_list('email', flat=True):
+            if email:
+                emails.extend(e.strip() for e in email.splitlines() if e.strip())
+        return list(set(emails))
 
 
 MEALS = [
